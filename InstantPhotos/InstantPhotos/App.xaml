@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:InstantPhotos;assembly=InstantPhotos"
+             mc:Ignorable="d"
+             x:Class="InstantPhotos.App">
+    <Application.Resources>
+        
+        <!-- Application colors -->
+        <Color x:Key="White">White</Color>
+        <Color x:Key="PurpleLight">#9a77c4</Color>
+        <Color x:Key="Purple">#6F3EAB</Color>
+        <Color x:Key="Yellow">#FFDF00</Color>
+        <Color x:Key="Black">Black</Color>
+        <Color x:Key="Red">Red</Color>
+        <Color x:Key="Green">Green</Color>
+        
+        <!-- Control styles -->
+        <Style TargetType="{x:Type Label}" x:Key="BaseLabel">
+            <Setter Property="FontFamily" Value="Zila"/>
+        </Style>
+        
+        <Style TargetType="{x:Type Button}" x:Key="BasicButton">
+            <Setter Property="FontFamily" Value="Zila"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource Purple}"/>
+            <Setter Property="TextColor" Value="{StaticResource White}"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="BasicLabel" BasedOn="{StaticResource BaseLabel}">
+            <Setter Property="BackgroundColor" Value="{StaticResource Purple}"/>
+            <Setter Property="TextColor" Value="{StaticResource White}"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="{x:Type TabbedPage}" x:Key="BasicTabbedPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource Purple}"/>
+            <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+            <Setter Property="SelectedTabColor" Value="{StaticResource Yellow}"/>
+            <Setter Property="UnselectedTabColor" Value="{StaticResource White}"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="StatusLabel" BasedOn="{StaticResource BaseLabel}">
+            <Style.Triggers>
+                <Trigger TargetType="Label" Property="Text" Value="Online">
+                    <Setter Property="TextColor" Value="{StaticResource Green}"/>
+                </Trigger>
+                <Trigger TargetType="Label" Property="Text" Value="Offline">
+                    <Setter Property="TextColor" Value="{StaticResource Red}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Value converters -->
+        <local:BoolToStatusConverter x:Key="StatusConverter"/>
+        <local:CornerRadiusToButtonSizeConverter x:Key="RoundButtonConverter"/>
+        <local:StatusToActionConverter x:Key="StatusToActionConverter"/>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPhotos.Android", "InstantPhotos\InstantPhotos.Android\InstantPhotos.Android.csproj", "{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPhotos", "InstantPhotos\InstantPhotos\InstantPhotos.csproj", "{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C73588A-2A38-45C6-90E3-3CE8AE948CE5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0EEAF2-3691-4FF4-A83D-83159E67B4B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62D80A77-52A1-4D11-9777-9DD13D2C0B63}
+	EndGlobalSection
+EndGlobal

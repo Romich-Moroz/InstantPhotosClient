@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>defaultkeyfile.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\ZillaSlab-Bold.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-BoldItalic.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-Italic.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-Light.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-LightItalic.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-Medium.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-MediumItalic.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-Regular.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\ZillaSlab-SemiBoldItalic.ttf" />
+    <None Remove="Resources\Images\Connect.png" />
+    <None Remove="Resources\Images\fileslist.png" />
+    <None Remove="Resources\Images\photo.png" />
+    <None Remove="Resources\Images\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-MediumItalic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\ZillaSlab-SemiBoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Images\Connect.png" />
+    <EmbeddedResource Include="Resources\Images\Fileslist.png" />
+    <EmbeddedResource Include="Resources\Images\Photo.png" />
+    <EmbeddedResource Include="Resources\Images\Settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\RoundButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ConnectPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TakePhotoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+</Project>

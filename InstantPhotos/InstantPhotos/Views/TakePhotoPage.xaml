@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="TakePhotoPageRef"
+             x:Class="InstantPhotos.TakePhotoPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Send queue"  Style="{StaticResource BasicLabel}" FontSize="22" HorizontalTextAlignment="Center"/>
+            <CollectionView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding TransferQueue}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Padding="15,5,5,15" Text="{Binding Name}" VerticalOptions="Center"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Margin="0,0,0,75" x:Name="TakePhoto" Text="Take Photo" CornerRadius="90" Style="{StaticResource BasicButton}" 
+                        WidthRequest="{Binding Source={x:Reference TakePhoto},Path=CornerRadius,Converter={StaticResource RoundButtonConverter}}" 
+                        HeightRequest="{Binding Source={x:Reference TakePhoto},Path=CornerRadius,Converter={StaticResource RoundButtonConverter}}" 
+                        HorizontalOptions="Center" Command="{Binding TakePhotoCommand}" CommandParameter="{x:Reference TakePhotoPageRef}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

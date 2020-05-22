@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:InstantPhotos;assembly=InstantPhotos"
+             mc:Ignorable="d"
+             x:Class="InstantPhotos.ConnectPage"
+             x:Name="ConnectPageRef">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Place new controls here -->
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Network status" HorizontalTextAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" FontSize="22" 
+                       Style="{StaticResource BasicLabel}" />
+
+                <Label Margin="20,0,0,0" Text="Server connection status: " HorizontalOptions="Start" Grid.Row="1" Grid.Column="0"
+                       FontSize="18" Style="{StaticResource BaseLabel}" TextColor="{StaticResource Black}"/>
+                <Label Margin="0,0,20,0" Text="{Binding ConnectionStatus, Converter={StaticResource StatusConverter},FallbackValue=Offline}"
+                       HorizontalOptions="End" Grid.Row="1" Grid.Column="1" FontSize="18" Style="{StaticResource StatusLabel}"/>
+            </Grid>
+            <Button Margin="0,0,0,75" x:Name="Connect" Text="{Binding ConnectionStatus, Converter={StaticResource StatusToActionConverter}}" CornerRadius="90" Style="{StaticResource BasicButton}" 
+                        WidthRequest="{Binding Source={x:Reference Connect},Path=CornerRadius,Converter={StaticResource RoundButtonConverter}}" 
+                        HeightRequest="{Binding Source={x:Reference Connect},Path=CornerRadius,Converter={StaticResource RoundButtonConverter}}" 
+                        HorizontalOptions="Center" Command="{Binding ConnectToggleCommand}" CommandParameter="{x:Reference ConnectPageRef}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
